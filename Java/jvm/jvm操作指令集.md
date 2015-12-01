@@ -3,21 +3,22 @@ const系列
 
 主要负责把简单的数值类型送到栈顶,比如对应int型才该方式只能把-1,0,1,2,3,4,5（分别采用iconst_m1,iconst_0, iconst_1, iconst_2, iconst_3, iconst_4, iconst_5）送到栈顶。对于int型的其他数值使用push系列命令（比如bipush）
 
+
 |操作符|说明|
 |--|--|
-|iconst_m1 | 将int型(-1)推送至栈顶 |
-|iconst_0  | 将int型(0)推送至栈顶  |
-|iconst_1  | 将int型(1)推送至栈顶  |
-|iconst_2  | 将int型(2)推送至栈顶  |
-|iconst_3  | 将int型(3)推送至栈顶  |
-|iconst_4  | 将int型(4)推送至栈顶  |
-|iconst_5  | 将int型(5)推送至栈顶  |
-|lconst_0  | 将long型(0)推送至栈顶  |
-|lconst_1  | 将long型(1)推送至栈顶  |
-|fconst_0  | 将float型(0)推送至栈顶  |
-|fconst_1  | 将float型(1)推送至栈顶  |
-|dconst_0  | 将double型(0)推送至栈顶  |
-|dconst_1  | 将double型(1)推送至栈顶  |
+|iconst_m1| 将int型(-1)推送至栈顶|
+|iconst_0 | 将int型(0)推送至栈顶 |
+|iconst_1 | 将int型(1)推送至栈顶 |
+|iconst_2 | 将int型(2)推送至栈顶 |
+|iconst_3 | 将int型(3)推送至栈顶 |
+|iconst_4 | 将int型(4)推送至栈顶 |
+|iconst_5 | 将int型(5)推送至栈顶 |
+|lconst_0 | 将long型(0)推送至栈顶 |
+|lconst_1 | 将long型(1)推送至栈顶 |
+|fconst_0 | 将float型(0)推送至栈顶 |
+|fconst_1 | 将float型(1)推送至栈顶 |
+|dconst_0 | 将double型(0)推送至栈顶 |
+|dconst_1 | 将double型(1)推送至栈顶 |
 
 
 push系列
