@@ -3,7 +3,6 @@ const系列
 
 主要负责把简单的数值类型送到栈顶,比如对应int型才该方式只能把-1,0,1,2,3,4,5（分别采用iconst_m1,iconst_0, iconst_1, iconst_2, iconst_3, iconst_4, iconst_5）送到栈顶。对于int型的其他数值使用push系列命令（比如bipush）
 
-
 |操作符|说明|
 |--|--|
 |iconst_m1 | 将int型(-1)推送至栈顶 |
