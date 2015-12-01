@@ -1,9 +1,8 @@
-### 保存一下代码，文件名　sublime-imfix.c
+### 保存以下代码，文件名　sublime-imfix.c
 
 
 
-```java
-
+```
 /*
 sublime-imfix.c
 Use LD_PRELOAD to interpose some function to fix sublime input method support for linux.
@@ -83,7 +82,6 @@ void gtk_im_context_set_client_window (GtkIMContext *context,
   }
   gdk_window_add_filter (window, event_filter, context); 
 }
-
 ```
 
 
