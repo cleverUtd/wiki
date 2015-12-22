@@ -37,7 +37,7 @@
     
     cd /home/unicat/nginx
 
-    wget http://nginx.org/download/nginx-1.9.7.tar.gz
+    wget http://nginx.org/download/nginx-1.9.3.tar.gz
     
     tar zxvf nginx-1.9.3.tar.gz
 
@@ -51,3 +51,22 @@
 
     make install
 
+
+安装nginx第三模块
+==
+
+```
+#./configure --prefix=/home/unicat/nginx/nginx-1.9.3 \
+--with-http_stub_status_module \
+--with-http_ssl_module --with-http_realip_module \
+--with-http_image_filter_module \
+--add-module=/第三方模块目录
+# make
+# /home/unicat/nginx/nginx-1.9.3/sbin/nginx -s stop
+# cp objs/nginx /usr/local/nginx/sbin/nginx
+# /home/unicat/nginx/nginx-1.9.3/sbin/nginx
+```
+
+安装第三方模块实际上是使用 --add-module 重新安装一次 nginx,不要 make install 而是直接把编译目录下 objs/nginx 文件直接覆盖老的 nginx 文件.如果需要安装多个 nginx 第三方模块,只需要多指定几个相应的--add-module 即可.
+
+PS:重新编译的时候,记得一定要把以前编译过的模块一同加到 configure 参数里面
