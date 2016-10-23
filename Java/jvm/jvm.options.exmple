@@ -1,0 +1,81 @@
+#########################
+#     性能相关           #
+#########################
+
+-XX:-UseBiasedLocking
+-XX:AutoBoxCacheMax=20000
+
+
+
+
+#########################
+#     内存大小相关        #
+#########################
+
+-Xms1024m
+-Xmx1024m
+-Xmn512m
+-XX:MaxDirectMemorySize=1024m
+-XX:PermSize=256m
+-XX:MaxPermSize=512m
+-XX:ReservedCodeCacheSize=240m
+
+
+
+
+##################
+#    GC 相关      #
+##################
+
+### CMS 
+
+-XX:+UseParNewGC
+-XX:+UseConcMarkSweepGC
+-XX:CMSInitiatingOccupancyFraction=75
+-XX:+UseCMSInitiatingOccupancyOnly
+-XX:MaxTenuringThreshold=2
+-XX:+ExplicitGCInvokesConcurrent
+-XX:+ParallelRefProcEnabled
+
+### GC 日志
+
+#-Xloggc:/tmp/gc.log
+-XX:+PrintGCDetails
+-XX:+PrintGCDateStamps
+#-XX:+PrintHeapAtGC
+-XX:+PrintTenuringDistribution
+-XX:+PrintGCApplicationConcurrentTime
+-XX:+PrintGCApplicationStoppedTime
+-XX:+PrintPromotionFailure
+-XX:+UseGCLogFileRotation
+-XX:NumberOfGCLogFiles=10
+-XX:GCLogFileSize=10M
+
+
+
+
+###################
+#  异常日志相关     #
+###################
+
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:HeapDumpPath=${LOGDIR}/ 
+-XX:-OmitStackTraceInFastThrow
+-XX:ErrorFile=${LOGDIR}/hs_err_%p.log
+
+
+
+
+
+####################
+#    JMX 相关      #
+####################
+
+-Dcom.sun.management.jmxremote.port=${PORT}
+-Dcom.sun.management.jmxremote 
+-Dcom.sun.management.jmxremote.authenticate=false 
+-Dcom.sun.management.jmxremote.ssl=false 
+-Djava.rmi.server.hostname=127.0.0.1
+
+-XX:+UnlockCommercialFeatures
+-XX:+FlightRecorder
